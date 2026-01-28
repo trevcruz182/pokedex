@@ -39,6 +39,7 @@ export default function PokeCard(props) {
             const moveData = await res.json()
             console.log('Fetched move from API', moveData)
             const description = moveData?.flavor_text_entries.filter(val => {
+                // TODO: Create a way for users to filter on what version group they would like. Can display a series of buttons above the moves, including an "All" option, for users to filter by.
                 return val.version_group.name == 'firered-leafgreen'
             })[0]?.flavor_text
 
